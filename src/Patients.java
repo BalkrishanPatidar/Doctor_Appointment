@@ -6,57 +6,30 @@ import java.util.Scanner;
 
 public class Patients {
 
-	public static void Patient_Menu() {
+	public static void Patient_Menu() throws Exception {
 		Scanner sc = new Scanner(System.in);
-		int choice;
+		int ch;
 
 		do {
 			displayMenu();
-			choice = sc.nextInt();
-			sc.nextLine(); // Consume the newline character5
+			ch = sc.nextInt();
+			sc.nextLine(); 
 
-			switch (choice) {
+			switch (ch) {
 			case 1:
-				try {
-					Insert_Patient();
-				} catch (Exception e1) {
-					System.out.println(e1);
-
-				}
-
+				Insert_Patient();
 				break;
 			case 2:
-				try {
-					Modify_Patient();
-				} catch (Exception e1) {
-					System.out.println(e1);
-
-				}
+				Modify_Patient();
 				break;
 			case 3:
-				try {
-					Delete_Patient();
-				} catch (Exception e1) {
-					System.out.println(e1);
-				}
-
+				Delete_Patient();
 				break;
 			case 4:
-				try {
-					PrintDetails();
-
-				} catch (Exception e) {
-					System.out.println(e);
-				}
-
+				PrintDetails();
 				break;
 			case 5:
-				try {
-					PrintAllDetails();
-				} catch (Exception e) {
-					System.out.println(e);
-				}
-
+				PrintAllDetails();
 				break;
 			case 0:
 				System.out.println("Exiting the patient menu .");
@@ -65,7 +38,7 @@ public class Patients {
 				System.out.println("Invalid choice. Please select a valid option.");
 				break;
 			}
-		} while (choice != 0);
+		} while (ch != 0);
 	}
 	
 	private static void displayMenu() {
